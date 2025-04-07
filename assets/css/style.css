@@ -139,11 +139,11 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+/* body {
   background-color: var(--white);
   color: var(--purple-navy);
   font-size: 1.6rem;
-}
+} */
 
 ::-webkit-scrollbar { width: 10px; }
 
@@ -1047,4 +1047,119 @@ body {
 
   .footer-brand { grid-column: auto; }
 
+}
+/* Hide Amharic by default */
+.en {
+  display: block;
+
+}
+
+.am {
+  display: none;
+}
+.eng{
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   width: 30px;
+   height: 30px;
+}
+.ahm{
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   width: 30px;
+   height: 30px;
+}
+.eng.active {
+  background-color: #2196F3;
+  border: #ccc;
+  color: white;
+}
+
+.ahm.active {
+  background-color: #2196F3;
+  border: #ccc;
+  color: white;
+}
+/* Language Toggle Button Styling */
+.lang-toggle-btn {
+  margin-top: 1rem;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 20px;
+  min-width: fit-content;
+}
+
+/* Switch styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  background-color: #ccc;
+  border-radius: 34px;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 6px;
+}
+
+.slider::before {
+  content: "";
+  height: 26px;
+  width: 26px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+  display: inline-block;
+}
+
+.label-text {
+  position: absolute;
+  right: 8px;
+  font-size: 18px;
+  pointer-events: none;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+  justify-content: flex-end;
+}
+
+
+
+.dark-mode {
+  background-color:#38395f;
+  color: white;
+}
+.light-mode {
+  background-color: white;
+  color: #ccc;
+}
+.toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
 }

@@ -20,6 +20,12 @@ for (let i = 0; i < elemArr.length; i++) {
   });
 }
 
+function toggleLanguage() {
+  document.body.classList.toggle("lang-am");
+}
+
+
+
 /**
  * toggle navbar & overlay when click any navbar-link
  */
@@ -53,4 +59,44 @@ window.addEventListener("scroll", function () {
     header.classList.remove("active");
     goTopBtn.classList.remove("active");
   }
-});
+});// Function to toggle language
+function toggleLanguage() {
+  // Toggle visibility of English and Amharic
+  const englishText = document.querySelectorAll('.en');
+  const amharicText = document.querySelectorAll('.am');
+  const engLabel = document.querySelector('.eng');
+  const ahmLabel = document.querySelector('.ahm');
+
+  // If Amharic is currently shown, hide it and show English
+  if (englishText[0].style.display === 'none') {
+    englishText.forEach(item => item.style.display = 'block');
+    amharicText.forEach(item => item.style.display = 'none');
+   
+  }
+  // If English is currently shown, hide it and show Amharic
+  else {
+    englishText.forEach(item => item.style.display = 'none');
+    amharicText.forEach(item => item.style.display = 'block');
+  }
+  engLabel.classList.toggle('active');
+  ahmLabel.classList.toggle('active');
+}
+
+
+function toggleColor() {
+  const body = document.body;
+  const sunIcon = document.getElementById('sun-icon');
+  const moonIcon = document.getElementById('moon-icon');
+
+  // Toggle between dark and light mode
+  body.classList.toggle('dark-mode');
+  body.classList.toggle('light-mode');
+
+  // Save the current theme to local storage (optional)
+  const currentMode = body.classList.contains('dark-mode') ? 'dark' : 'light';
+  localStorage.setItem('theme', currentMode);
+
+  // Toggle icons based on mode
+  sunIcon.style.display = body.classList.contains('dark-mode') ? 'none' : 'block';
+  moonIcon.style.display = body.classList.contains('dark-mode') ? 'block' : 'none';
+}
